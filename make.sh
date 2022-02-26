@@ -1,1 +1,1 @@
-pandoc -s -o Amplify_Rootclaim.pdf amplify-rootclaim.md
+pandoc -s -o "amplify-$1.pdf" "amplify-$1.md"

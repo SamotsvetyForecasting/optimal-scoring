@@ -1,15 +1,18 @@
 ---
 title: "Amplify Rootclaim: Probably a Better Method for Forecasting Unanswerable Questions"
-author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute. I am thankful to Ezra Karger et al. for allowing himself to be billed for criticism of his proposed methods.}
+author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
 date: \today
 urlcolor: blue
 ---
 
 # Motivation
 
-In [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to ellicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of [elaborate]. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with a lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
+In [Alignment Problems With Current Forecasting Platforms](https://arxiv.org/abs/2106.11248), Sempere and Lawsen outline a variety of problems with current forecasting platforms, whose scoring rules are found to either not be proper—as in the case of Good Judgment Open or CSET-Foretell (now INFER)—or incentivize distorting one's true probabilities to maximize the chances of placing in the top few positions which earn a monetary reward—as in the case of Metaculus. In addition, in almost all cases, forecasting platforms—or, for that matter, prediction markets—disincentivize collaboration.
 
-In this working paper, we outline an alternative method, which briefly looks as follows:  
+Against that backdrop, [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to ellicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of a small randomized trial. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with a lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
+
+In this working paper, we outline an alternative method, "amplify Rootclaim", which briefly looks as follows:  
+
 - There is a trusted central authority capable of approximate Bayesian updates which cares about its long-term reputation, but which has limited capacity   
 - A larger contingent of forecasters submit bids to that central authority, and is rewarded when their bids cause the central authority to update.
 
