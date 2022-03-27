@@ -1,5 +1,5 @@
 ---
-title: "Decentralize Bayesianism: Probably a Better Method for Forecasting Unanswerable Questions"
+title: "Amplify Rootclaim: Probably a Better Method for Forecasting Unanswerable Questions"
 author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
 date: \today
 urlcolor: blue
@@ -16,7 +16,7 @@ In this working paper, we outline an alternative method, "amplify Rootclaim", wh
 - There is a trusted central authority capable of approximate Bayesian updates which cares about its long-term reputation, but which has limited capacity   
 - A larger contingent of forecasters submit bids to that central authority, and is rewarded when their bids cause the central authority to update.
 
-The authors has no connection with [Rootclaim](https://www.rootclaim.com/) besides an admiration of their methods and track record: Rootclaim might be considered a prime example of the central authority necessary for this method to work. Rootclaim produces a small number of highly detailed Bayesian analysis of current affairs, and has a strong interest in mantaining its reputation in the long-term—on the one hand because its business model is precisely based on mantaining an accurate long-term public track record, and on the other hand to prove the superiority of Bayesian methods, as every Bayesian deeply desires in her heart to do. Throughout the paper, we will thus use "Rootclaim" as a shorthand for "central authority capable of approximating Bayesian updating."
+The authors has no connection with [Rootclaim](https://www.rootclaim.com/) besides an admiration of their methods and track record. Rootclaim might be considered a prime example of the central authority necessary for this method to work. Rootclaim produces a small number of highly detailed Bayesian analysis of current affairs, and has a strong interest in mantaining its reputation in the long-term—on the one hand because its business model is precisely based on mantaining an accurate long-term public track record, and on the other hand to prove the superiority of Bayesian methods, as every Bayesian deeply desires in her heart to do. Throughout the paper, we will thus use "Rootclaim" as a shorthand for "central authority capable of approximating Bayesian updating."
 
 # Description of the method
 
@@ -100,7 +100,3 @@ Although both Karger et al.'s and our method output a legible output, in Karger'
 ## Conclusion
 
 In conclusion, the proposed method of amplifying an expensive but Bayesian approximator has the benefit of appearing more grounded, and not having the weird loops in Karger et al.'s reciprocal scoring proposal—or in other Keynesian beauty contest designs. Further, the existence of Rootclaim provides proof of existence of sch trusted Bayesians approximators. We look forward to someone implementing the method.
-
-***
-
-
