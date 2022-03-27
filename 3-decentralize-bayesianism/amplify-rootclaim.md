@@ -1,5 +1,5 @@
 ---
-title: "Amplify Rootclaim: Probably a Better Method for Forecasting Unanswerable Questions"
+title: "Decentralize Bayesianism: Probably a Better Method for Forecasting Unanswerable Questions"
 author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
 date: \today
 urlcolor: blue
@@ -54,6 +54,8 @@ Continuing to our example, the original probability of $32\%$ corresponds to aro
 If we valued each bit of information about an invasion of Taiwan at $1000, the first forecaster would receive \$1,290, while the second would receive \$300.
 
 Note that under this method, if Rootclaim then moved back to $55\%$ because of a third argument brought in by a third person, that third person would receive $300, but rewards already given out would not be taken back. 
+
+# Discussion of the method
 
 ## More on the central authority
 
