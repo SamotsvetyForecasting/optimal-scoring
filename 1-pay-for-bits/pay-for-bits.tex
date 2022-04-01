@@ -31,7 +31,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{
-            pdftitle={Pay for bits: Probably a Better Method for Rewarding Forecasters},
+            pdftitle={Pay for Bits: Probably a Better Method for Rewarding Forecasters},
             pdfauthor={Nuño Sempere},
             colorlinks=true,
             linkcolor=Maroon,
@@ -60,7 +60,7 @@
 \makeatother
 
 
-\title{Pay for bits: Probably a Better Method for Rewarding Forecasters}
+\title{Pay for Bits: Probably a Better Method for Rewarding Forecasters}
 \author{Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}}
 \date{\today}
 
@@ -88,12 +88,14 @@ scoring rule has both a discrete form---where resolution is either a yes
 or a no, and a continuous form---where resolution can be any probability
 between 0 and 1.
 
-In essence, we start out with the logarithmic scoring rule, and we add a
-few bells and whistles to make it collaborative. We also prefer the
-interpretation of a scoring rule as prediction market with an automatic
-market maker, which is a better abstraction because it deals more
-elegantly with forecasters not being able to input arbitrarily high or
-low probabilities.
+In essence, we start out with
+\href{https://mason.gmu.edu/~rhanson/mktscore.pdf}{Hansons' logarithmic
+market scoring rule}, and we add a few bells and whistles to make it
+collaborative. Although interacting with a prediction market run by an
+automatic market maker is known to be equivalent to interacting with a
+scoring rule, we prefer the former interpretation, which is a better
+abstraction because it deals more elegantly with forecasters not being
+able to input arbitrarily high or low probabilities.
 
 In particular, the practical innovations we suggest are:
 
@@ -102,7 +104,7 @@ In particular, the practical innovations we suggest are:
 \item
   Instead of comparing forecasters against other forecasters, compare
   them against against the initial probability of the stakeholder who
-  sponsors the question.
+  sponsors the question
 \item
   Create a prediction market for each forecaster with a logarithmic
   market scoring rule, and allow each forecaster to move only the
@@ -139,7 +141,7 @@ properties such as:
   given A'' can't be straightforwardly related to the Brier score on ``A
   and B''
 \item
-  Comparability: The cummulative relative Brier score doesn't correspond
+  Comparability: The cumulative relative Brier score doesn't correspond
   to any particular meaning.
 \item
   Comparability II: The Brier score of the average guess will always be
@@ -152,30 +154,29 @@ In contrast, the logarithmic scoring rule has an array of desirable
 properties.
 
 \begin{itemize}
-\tightlist
 \item
   Composability: The logarithmic score on ``A\&B'' is the sum of the log
   scores on ``A'' and ``B given A''
 \item
-  Comparability: The cummulative relative log score corresponds to bits
+  Comparability: The cumulative relative log score corresponds to bits
   of information which would be added or removed
 \item
   Comparability II: The arithmetic mean of the log scores is the log
   score of the geometric mean of the guesses. If forecasters are
   rewarded in proportion to their log score vs the crowd, there is no
   advantage to forecasting the current crowd.
-\end{itemize}
 
-More general, for many nice theoretical properties, the log score will
-have them, whereas the Brier score will not. And yet, the Brier score
-offers bounded payoffs, whereas the logarithmic score does not. That is,
-when distributing a fixed pot of money as rewards to forecasters, the
-natural way to do this would be in proportion to their scores. But in
-the case of the logarithmic scoring rule, it is not bounded, which would
-complicate payoff calculations.\footnote{Readers may think that
-  normalization by the worst logarithmic score may solve this. But
-  because the worst score can be arbitrarily low, preserving incentive
-  compatibility is not trivial.}
+  More general, for many nice theoretical properties, the log score will
+  have them, whereas the Brier score will not. And yet, the Brier score
+  offers bounded payoffs, whereas the logarithmic score does not. That
+  is, when distributing a fixed pot of money as rewards to forecasters,
+  the natural way to do this would be in proportion to their scores. But
+  in the case of the logarithmic scoring rule, it is not bounded, which
+  would complicate payoff calculations.\footnote{Readers may think that
+    normalization by the worst logarithmic score may solve this. But
+    because the worst score can be arbitrarily low, preserving incentive
+    compatibility is not trivial.}
+\end{itemize}
 
 This is why platforms such as Cultivate Labs still use the Brier score
 to reward their members. In contrast, platforms such as Metaculus solve
@@ -194,12 +195,45 @@ bounded without having to institute a sharp cut-off.
 From a theoretical perspective and pointers to previous literature,
 Hanson's \href{https://mason.gmu.edu/~rhanson/mktscore.pdf}{Logarithmic
 Market Scoring Rules for Modular Combinatorial Information Aggregation}
-is a dry if comprehensive introduction. From the perpective of a
+is a dry if comprehensive introduction. From the perspective of a
 programmer seeking to implement a logarithmic market scoring rule,
-Cultivate Labs'
-\href{https://www.cultivatelabs.com/prediction-markets-guide/how-does-logarithmic-market-scoring-rule-lmsr-work}{How
-does the Logarithmic Market Scoring Rule (LMSR) work?} is unusually
-short.
+Gnosis'
+\href{https://gnosis-pm-js.readthedocs.io/en/v1.3.0/lmsr-primer.html}{LMSR
+Primer} is particularly readable.
+
+To summarize, a logarithmic scoring rule is given by
+\(s_i = a_i + b\cdot log(p_i)\), where \(p_i\) is the probability the
+player assigns to an event. We can rewrite this as
+\(s_i = b \cdot log(p_i / c_i)\), so that it becomes clear that \(b\)
+determines how much the automatic market maker pays or receives per some
+amount of improvement of information over its prior, \(c_i\).
+Intuitively, \(b\) should be higher the more the market sponsor cares
+about the event.
+
+Then, from that scoring rule, we can create an equivalent market scoring
+rule. A market scoring rule is determined by a cost function, \(C\),
+such that the cost of buying an additional \(n\) shares of outcome \(i\)
+is given by \(C(q_i + n)-C(q_i)\), where \(q_i\) are the number of
+shares for that outcome already issued. In the case of the logarithmic
+market marker, the cost function is given by:
+
+\[C(\vec{q}) = b \cdot log\left( \sum_i{exp\left(\frac{q_i + a_i}{b}\right)}\right)\]
+
+where \(a_i\) is given by the original credences of the market creator:
+
+\[a_i = b \cdot log\left(\frac{1}{c_i}\right)\]
+
+Then the marginal price is given by
+
+\[p_i = \frac{\partial C}{\partial q_i} = \frac{exp\left(\frac{q_i + a_i}{b}\right)}{\sum_j{exp\left(\frac{q_j + a_j}{b}\right)}}\]
+
+Note that from a platform design perspective, \(\vec{a}\) can be
+abstracted away by setting \(\vec{q}=\vec{a}\), i.e., by initializing a
+market maker with a number of shares already issued. Note also that
+players cannot loose more than the account in their balance, or,
+conversely, that the more they are willing to risk, the more extreme
+their probabilities can be. This seems more elegant than discrete
+cutoffs at \(<1\%\) or \(>99\%\), as in Metaculus.
 
 \hypertarget{competing-against-the-house-provides-an-incentive-for-collaboration-in-a-way-which-competing-against-other-forecasters-doesnt.}{%
 \subsection{Competing against the house provides an incentive for
@@ -233,7 +267,7 @@ The alternative suggested in this paper is to reward forecasters
 monetarily in proportion to their improvement over a question's prior
 weighted by importance. By the question prior, I mean an initial guess
 provided by the question creator or sponsor. And by weighing by
-importance, we incentivize forecaters to predict on more important
+importance, we incentivize forecasters to predict on more important
 questions. So overall, we incentivize forecasters to predict on
 important questions for which the sponsoring stakeholder's initial guess
 is worse.
@@ -258,7 +292,11 @@ in the
 game}\label{making-forecasters-risk-their-own-funds-makes-them-have-skin-in-the-game}}
 
 For a treatment of why this is beneficial, see
-\href{https://twitter.com/nntaleb}{Nassim Taleb}'s Incerto.
+\href{https://twitter.com/nntaleb}{Nassim Taleb}'s Incerto. But note
+that this step is optional. That is, forecasting platforms could reward
+points to forecasters in according to the market scoring rule specified
+above. As long as forecaster reward is eventually proportional to points
+acquired, this scoring rule becomes proper.
 
 \hypertarget{description-of-the-method.}{%
 \section{Description of the method.}\label{description-of-the-method.}}
@@ -299,6 +337,10 @@ the patron may sub-contract the creation of the prior, for instance by
 paying other forecasters to quickly do so or by creating low-liquidity
 (and thus low-potential reward) prediction markets.
 
+If there is no stakeholder or proxy-stakeholder willing and able to
+provide a prior, this also provides a useful signal to forecasters that
+there might be no stakeholders interested in the question.
+
 \hypertarget{forecasters-predict-on-the-question}{%
 \subsection{Forecasters predict on the
 question}\label{forecasters-predict-on-the-question}}
@@ -311,7 +353,7 @@ of money which is available to take bets on both sides. The more
 liquidity there is, the more money it takes to moves a market's odds,
 and the more money that can be made if those odds are wrong. For this
 reason, question creators would put more liquidity in markets they care
-more about.
+more about. Above, liquidity corresponds to the parameter \(b\).
 
 If an individual forecaster thinks that the initial probability is
 wrong, he can move it to a probability which he thinks is more correct
@@ -334,7 +376,9 @@ particularly advisable point would be to cut trading when the
 stakeholder interested in the question makes the decision that the
 market was created to influence. Secondly, slowly reduce the amount of
 liquidity there is in the markets as time goes on, so that forecasters
-have a small incentive to predict sooner rather than later.
+have a small incentive to predict sooner rather than later. This is easy
+to do by making the parameter \(b=b(t)\), i.e., dependent on time, and
+slowly decreasing.
 
 \hypertarget{the-question-gets-a-binary-resolution-and-forecasters-get-rewarded.}{%
 \subsection{The question gets a binary resolution and forecasters get
@@ -342,7 +386,7 @@ rewarded.}\label{the-question-gets-a-binary-resolution-and-forecasters-get-rewar
 
 Taiwan either gets invaded or doesn't. Forecasters get rewarded in
 proportion to the number of shares of the winning outcome that they
-accumulated while interaccting with their prediction market.
+accumulated while interacting with their prediction market.
 
 \hypertarget{the-question-gets-a-probabilistic-resolution}{%
 \subsection{The question gets a probabilistic
@@ -353,7 +397,7 @@ uncertainty about how a question should resolve, current forecasting
 platforms tend to resolve questions as ambiguous. Prediction markets
 tend to break to one side (as 0\% or as 100\%), but they also have the
 option of resolving questions probabilistically, so that shares pay out
-Xcts and (100-X)cts rather than \$0 or \$1.
+at \(X\) cts and \((100-X)\) cts rather than \(\$0\) or \(\$1\).
 
 Some common reasons for uncertain resolutions might be:
 
@@ -364,8 +408,8 @@ ontologies}\label{because-of-uncertain-ontologies}}
 The Metaculus question as currently written resolves only if the
 People's Republic of China takes over at least half of Taiwan. However,
 this is somewhat arbitrary. If the question had been on a prediction
-market, it could also have been structured such that an invasion of n\%
-of Taiwan pays out n cents for each share.
+market, it could also have been structured such that an invasion of
+\(n\)\% of Taiwan pays out \(n\) cents for each share.
 
 \hypertarget{because-of-probabilistic-knowledge}{%
 \subsubsection{Because of probabilistic
@@ -392,12 +436,12 @@ probabilistic.
 That is, shares for the prediction market are paid out according to the
 probability estimated by a different forecasting system. If that
 forecasting system estimates an X\% probability, shares of yes are paid
-out Xcts.
+out \(X\) cts.
 
 \hypertarget{conclusion}{%
 \subsection{Conclusion}\label{conclusion}}
 
-W e outlined three improvements to scoring rules as they are currently
+We outlined several improvements to scoring rules as they are currently
 implemented in forecasting platforms:
 
 \begin{itemize}
@@ -408,9 +452,10 @@ implemented in forecasting platforms:
   question
 \item
   Assign a prediction market governed by an automatic market maker to
-  each forecaster
+  each forecaster, rather than a scoring rule, because this better
+  governs how extreme the probabilities which forecasters input can be.
 \item
-  Make forecasters risk their own funds
+  Make forecasters risk their own funds.
 \end{itemize}
 
 These improvements solve the majority of the problems identified in
@@ -421,5 +466,12 @@ logarithmic market scoring rule, platforms may find others market
 scoring rules more suitable in practice. In addition, our method's cost
 increases linearly with the number of forecasters, so platforms should
 figure out how to invite only the good ones.
+
+Note also that the three improvements are modular, and their combination
+fairly opinionated. But there is nothing preventing platforms from
+comparing forecasters' Brier scores against the Brier scores of a
+stakeholder, from using a scoring rule or an automatic market-maker
+different from the logarithmic one, or from using play-money rather than
+real-money.
 
 \end{document}
