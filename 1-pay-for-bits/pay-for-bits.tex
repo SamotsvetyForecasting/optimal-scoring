@@ -219,7 +219,8 @@ market marker, the cost function is given by:
 
 \[C(\vec{q}) = b \cdot log\left( \sum_i{exp\left(\frac{q_i + a_i}{b}\right)}\right)\]
 
-where \(a_i\) is given by the original credences of the market creator:
+where \(a_i\) is given by the original credences of the market
+creator\footnote{Most discussions of the LMSR omit the $a_i$ parameter. This might be because the only ones who bothered to do the math were [Pennock](http://blog.oddhead.com/2006/10/30/implementing-hansons-market-maker/) and [Chenn and Pennock](https://arxiv.org/abs/1206.5252), and they likewise omit this parameter.}:
 
 \[a_i = b \cdot log\left(\frac{1}{c_i}\right)\]
 
@@ -471,7 +472,8 @@ Note also that the three improvements are modular, and their combination
 fairly opinionated. But there is nothing preventing platforms from
 comparing forecasters' Brier scores against the Brier scores of a
 stakeholder, from using a scoring rule or an automatic market-maker
-different from the logarithmic one, or from using play-money rather than
-real-money.
+different from the logarithmic
+one\footnote{For instance, practitioners such as Gnosis, Augur or [Manifold Markets](https://manifoldmarkets.substack.com/p/above-the-fold-market-mechanics?s=r) have historically prefered the constant product market maker due to ease of implementation},
+or from using play-money rather than real-money.
 
 \end{document}
