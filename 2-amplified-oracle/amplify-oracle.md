@@ -1,5 +1,5 @@
 ---
-title: "Amplify Samotsvety: Probably Better Methods for Rewarding Forecasters"
+title: "Amplified Oracle: Probably Better Methods for Rewarding Forecasters"
 author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
 date: \today
 urlcolor: blue
@@ -11,7 +11,7 @@ In [Alignment Problems With Current Forecasting Platforms](https://arxiv.org/abs
 
 Against that backdrop, [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to ellicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of a small randomized trial. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with an extremely lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
 
-In this working paper, we outline an alternative incentivization method, "amplify Samotsvety"[^1], which roughly looks as follows:
+In this working paper, we outline an alternative incentivization method, an "amplified oracle", which roughly looks as follows:
 
 - There is a trusted central authority which cares about its long-term reputation. This central authority is trusted, but has limited capacity.
 - Forecasters are then rewarded according to a scheme where they forecast on all questions, the central authority predicts on only a few questions chosen randomly, and then forecasters are rewarded according to the proximity of their predictions to that central authority.
@@ -20,37 +20,35 @@ Towards the middle of the paper, we also point out that the "central authority" 
 
 This scheme has the advantage that forecasters can be rewarded speedily for questions which either have no objective resolution or happen far in the future. In addition, if the trusted authority has long horizons, it can be rewarded when the question resolves in the future, or according to the best guess of a future forecasting system.
 
-[^1]: Samotsvety is Russian for "semi-precious stones". It is also the name of a forecasting team in which the authors are involved.
-
 # Description of the method
 
 In the interest of brevity, we shall outline our method by means of an example, and the example shall be the question "Will the People's Republic of China have annexed at least half of Taiwan by 2050?", as operationalized by [Metaculus](https://www.metaculus.com/questions/5320/chinese-annexation-of-most-of-taiwan-by-2050/). Alas, this method requires a cluster or questions, so the reader should picture a cluster of questions similar to that one.
 
-## Samotsvety determines a rough prior of all questios, in order to reduce potential reward.
+## The oracle determines a rough prior of all questios, in order to reduce potential reward.
 
 Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%$. Lets take this $32\%$ as 's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps. In the case of a patron aiming to learn from sponsoring a forecasting tournament, the prior might represent the patron's initial probability.
 
-## Forecasters attempt to foresee Samotsvety's future forecast.
+## Forecasters attempt to foresee the oracle's future forecast.
 
 Forecasters spend some effort trying to come up with forecasts which beat the prior. If they are rewarded in proportion to how much they beat this prior, as outlined in [Paying for bits](), they have an incentive to collaborate.
 
 [^bits]: Though this proposal can also be trivially adapted for use with other scoring rules.
 
-## Samotsvety predicts on a randomly chosen number of questions
+## The oracle predicts on a randomly chosen number of questions
 
-Samotsvety chooses some questions at random, and produces a forecast for these questions.
+The oracle chooses some questions at random, and produces a forecast for these questions.
 
-## Forecasters are rewarded or punished ccording to how much their probability moves from the prior to Samotsvety's forecast.
+## Forecasters are rewarded or punished ccording to how much their probability moves from the prior to the oracle forecast.
 
-As outlined in [Paying for bits]()[^bits], forecasters end up with a positive balance, if they have moved the probability from the prior towards Samotsvety's forecast. But if they moved the probability in the opposite direction, they end up with a negative balance.
+As outlined in [Paying for bits]()[^bits], forecasters end up with a positive balance, if they have moved the probability from the prior towards the oracle's forecast. But if they moved the probability in the opposite direction, they end up with a negative balance.
 
-In this case, forecasters should be rewarded in proportion to the number of questions which resolve. For instance, if Samotsvety only looks at one in ten questions, reward or punishment is multiplied by 10.
+In this case, forecasters should be rewarded in proportion to the number of questions which resolve. For instance, if the oracle only looks at one in ten questions, reward or punishment is multiplied by 10.
 
 Within the prediction market conceptualization, the maximum price of a share would be $10 rather than $1. But since shares only have a 10% chance of paying out, their price doesn't exceed $1.
 
-## Optionally, after a time, reality is observed, and Samotsvety itself is paid or punished in proportion to their accuracy.
+## Optionally, after a time, reality is observed, and the oracle itself is paid or punished in proportion to their accuracy.
 
-This requires Samotsvety to have relatively long time horizons.
+This requires the oracle to have relatively long time horizons.
 
 # Discussion of the method
 
