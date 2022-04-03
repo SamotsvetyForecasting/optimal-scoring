@@ -46,9 +46,15 @@ In this case, forecasters should be rewarded in proportion to the number of ques
 
 Within the prediction market conceptualization, the maximum price of a share would be $10 rather than $1. But since shares only have a 10% chance of paying out, their price doesn't exceed $1.
 
-## Optionally, after a time, reality is observed, and the oracle itself is paid or punished in proportion to their accuracy.
+## After a time, the oracle is rewarded or punished
 
-This requires the oracle to have relatively long time horizons.
+Optionally, after a time, reality is observed, and the oracle itself is paid or punished in proportion to their accuracy. But straight-out rewards require the oracle to have relatively long time horizons, and for anthropic effects to not hold (e.g., predicting a solar flare that ends life has the feature that if you're wrong, you are already dead).
+
+Alternatively, the oracle can itself be predicting the output of a more thorough investigation. For instance, in the presence of a fair lottery, that investigation can be made very intense and resource intensive with a small probability for relatively little cost.
+
+As a third option, the oracle may instead attempt to predict the client's forecast after additional time has passed and more information about the matter of interest has surfaced. In this case, it wouldn't be that the client is a worse forecaster than the oracle, but just busier.
+
+Readers may notice that this proposal resembles previously proposed amplification setups, such as those in [Lagerros et al.](https://www.lesswrong.com/posts/cLtdcxu9E4noRSons), which themselves build on ideas by Paul Christiano.
 
 # Discussion of the method
 
