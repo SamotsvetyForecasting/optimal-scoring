@@ -1,5 +1,5 @@
 ---
-title: "Pay for Bits: Probably a Better Method for Rewarding Forecasters"
+title: "Beat the House: Probably a Better Method for Rewarding Forecasters"
 author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
 date: \today
 urlcolor: blue
