@@ -9,11 +9,11 @@ urlcolor: blue
 
 In [Alignment Problems With Current Forecasting Platforms](https://arxiv.org/abs/2106.11248), Sempere and Lawsen outline a variety of problems with current forecasting platforms, whose scoring rules are found to either not be proper—as in the case of Good Judgment Open or CSET-Foretell (now INFER)—or incentivize distorting one's true probabilities to maximize the chances of placing in the top few positions which earn a monetary reward—as in the case of Metaculus. In addition, in almost all cases, forecasting platforms—or, for that matter, prediction markets—disincentivize collaboration.
 
-Against that backdrop, [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to ellicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of a small randomized trial. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with an extremely lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
+Against that backdrop, [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to elicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of a small randomized trial. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with an extremely lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
 
 In this working paper, we outline an alternative incentivization method, an "amplified oracle", which roughly looks as follows:
 
-- There is a trusted central authority which cares about its long-term reputation. This central authority is trusted, but has limited capacity.
+- There is a trusted authority which cares about its long-term reputation. This central authority is trusted, but has limited capacity.
 - Forecasters are then rewarded according to a scheme where they forecast on all questions, the central authority predicts on only a few questions chosen randomly, and then forecasters are rewarded according to the proximity of their predictions to that central authority.
 
 Towards the middle of the paper, we also point out that the "central authority" doesn't have to be particularly privileged or more trusted than the rest; the core feature is rather that some forecasters predict other forecasters and the second group of forecasters predicts reality.
@@ -38,7 +38,7 @@ Forecasters spend some effort trying to come up with forecasts which beat the pr
 
 The oracle chooses some questions at random, and produces a forecast for these questions.
 
-## Forecasters are rewarded or punished ccording to how much their probability moves from the prior to the oracle forecast.
+## Forecasters are rewarded or punished according to how much their probability moves from the prior to the oracle forecast.
 
 As outlined in [Paying for bits]()[^bits], forecasters end up with a positive balance, if they have moved the probability from the prior towards the oracle's forecast. But if they moved the probability in the opposite direction, they end up with a negative balance.
 
@@ -76,7 +76,7 @@ With regards to evidence from my experience as a forecaster, it just feels more 
 
 In contrast, Karger et al.'s method has weird loops; teams are not aiming to forecast reality, but rather to forecast what the other team will forecast that one's team will forecast that the other team will forecast... In the presence of Schelling points, human biases, laziness, etc., it is not clear that this process converges to the truth. For instance, the forecaster which puts in the most research effort, or the group which puts in the most effort, is disadvantaged: ideally, both groups want to put in the same amount of effort, or, equivalently, find out the same things. This is particularly egregious when a forecaster has some piece of evidence that they don't expect anybody on the other team to have. In that case, in Karger et al.'s schema, the forecaster with unique knowledge may want to forecast as if she did not know it.
 
-Some of the authors in Karger et al.'s paper bring forward the argument that if one has larger enough teams, each person should expect and equivalent someone in the other team to find the same evidence. Although perhaps true in the limit, this in my experience does not seem likely to be true in any degree of practice.
+Some of the authors in Karger et al.'s paper bring forward the argument that if one has large enough teams, each person should expect and equivalent someone in the other team to find the same evidence. Although perhaps true in the limit, this in my experience does not seem likely to be true in any degree of practice.
 
 Karger et al.'s method has the advantage that it produces a legible output, e.g., a wiki. In our case, the first group of forecasters might use similar infrastructure when predicting the forecasts from the second group, and the second group might use that infrastructure to organize its own thoughts. So that doesn't seem like a unique advantage of Karger et al.'s methods.
 
