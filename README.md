@@ -8,7 +8,7 @@ I am choosing to publish them in git and in the [arxiv](https://www.arxiv.com/) 
 
 - [*Beat the house*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/1-beat-the-house/beat-the-house.pdf) outlines three small tweaks to the logarithmic scoring rule that makes it collaborative and suitable for distributing a fixed amount of reward. 
 - [*Amplified Oracle*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/2-amplified-oracle/amplified-oracle.pdf) provides what I believe to be a more elegant alternative to [Karger et al.'s reciprocal scoring](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498)
-- [*Amplify Rootclaim*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/3-amplify-rootclaim/amplify-rootclaim.pdf) provides a more speculative alternative to Karger et al.'s reciprocal scoring rule.
+- [*Amplify a Bayesian*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/3-amplify-bayesian/amplify-bayesian.pdf) provides a more speculative alternative to Karger et al.'s reciprocal scoring rule.
 
 Although *Amplify Samotsvety* builds upon *Beat the house* to ensure collaborativeness, I would recommend reading *Amplify Samotsvety* first, and then come back to *Beat the house* if needed.
 

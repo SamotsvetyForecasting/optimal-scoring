@@ -19,7 +19,7 @@ In particular, the practical innovations we suggest are:
 - Create a prediction market for each forecaster with a logarithmic market scoring rule, and allow each forecaster to move only the probability of their own prediction market.
 - Require forecasters to put their money where their mouth is by betting their own money, so that if their forecast is worse that the houses' own forecast, they loose money. Optionally, sponsor forecasters once who start out without many fund themselves.
 
-In two accompanying papers, Amplify Samotsvety and Amplify Rootclaim, we use the continuous form of this scoring rule like a lego-block: we combine it with other methods to build more powerful and general incentive schemes.
+In two accompanying papers, *Amplified Oracle* and *Amplify a Bayesian*, we use the continuous form of this scoring rule like a lego-block: we combine it with other methods to build more powerful and general incentive schemes.
 
 # A few limitations of previous approaches, and their solutions
 
@@ -126,7 +126,7 @@ At the time of question resolution, Taiwan could be enmeshed in a civil war, suc
 
 ### Because the question hasn't resolved yet
 
-The original question asked about an invasion of Taiwan by 2050, which is fairly far in the future. So forecasters might not be motivated to predict in question for which the payoff might be very far away. In the two accompanying papers, Amplify Samotsvety and Amplify Rootclaim, we outline two methods for providing forecasters with a reward now for questions whose resolution is far away. But that reward will be probabilistic.
+The original question asked about an invasion of Taiwan by 2050, which is fairly far in the future. So forecasters might not be motivated to predict in question for which the payoff might be very far away. In the two accompanying papers, *Amplified Oracle* and *Amplify a Bayesian*, we outline two methods for providing forecasters with a reward now for questions whose resolution is far away. But that reward will be probabilistic.
 
 That is, shares for the prediction market are paid out according to the probability estimated by a different forecasting system. If that forecasting system estimates an X% probability, shares of yes are paid out $X$ cts.
 

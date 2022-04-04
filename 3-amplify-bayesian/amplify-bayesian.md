@@ -1,6 +1,6 @@
 ---
-title: "Amplify Rootclaim: Probably a Better Method for Forecasting Unanswerable Questions"
-author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute.}
+title: "Amplify a Bayesian: Probably a Better Method for Forecasting Unanswerable Questions"
+author: Nuño Sempere\footnote{Quantified Uncertainty Research Institute}
 date: \today
 urlcolor: blue
 ---
@@ -11,21 +11,21 @@ In [Alignment Problems With Current Forecasting Platforms](https://arxiv.org/abs
 
 Against that backdrop, [Reciprocal Scoring: A Method for Forecasting Unanswerable Questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498), Karger et al. describe a method to elicit predictions in situations in which resolutions are outright not possible, or very far away. They provide some preliminary evidence of its effectiveness in the form of a small randomized trial. However, in the post-peer-review discussion phase in social media, Karger et al.'s method was met with a lukewarm reception from the community of forecasting practitioners, which has grown to view methods which resemble Keynesian Beauty Constests with suspicion.
 
-In this working paper, we outline an alternative method, "amplify Rootclaim", which briefly looks as follows:  
+In this working paper, we outline an alternative method, "amplify a Bayesian", which briefly looks as follows:  
 
 - There is a trusted authority capable of approximate Bayesian updates which cares about its long-term reputation, but which has limited capacity   
 - A larger contingent of forecasters submit bids to that central authority, and is rewarded when their bids cause the central authority to update.
 
-The authors has no connection with [Rootclaim](https://www.rootclaim.com/) besides an admiration of their methods and track record. Rootclaim might be considered a prime example of the central authority necessary for this method to work. Rootclaim produces a small number of highly detailed Bayesian analysis of current affairs, and has a strong interest in mantaining its reputation in the long-term—on the one hand because its business model is precisely based on mantaining an accurate long-term public track record, and on the other hand to prove the superiority of Bayesian methods, as every Bayesian deeply desires in her heart to do. Throughout the paper, we will thus use "Rootclaim" as a shorthand for "central authority capable of approximating Bayesian updating."
+One example of a central authority able to produce Bayesian updates might be [Rootclaim](https://www.rootclaim.com/). Rootclaim produces a small number of highly detailed Bayesian analysis of current affairs, and has a strong interest in mantaining its reputation in the long-term—on the one hand because its business model is precisely based on mantaining an accurate long-term public track record, and on the other hand to prove the superiority of Bayesian methods, as every Bayesian deeply desires in her heart to do. However, The Auth
 
 # Description of the method
 
 In the interest of brevity, we shall outline our method by means of an example, and the example shall be the question "Will the People's Republic of China have annexed at least half of Taiwan by 2050?", as operationalized by [Metaculus](https://www.metaculus.com/questions/5320/chinese-annexation-of-most-of-taiwan-by-2050/). 
 
-## Rootclaim determines a rough prior to reduce potential forecasting reward
-Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+1})^{2050-2021} \approx 32\%$. Lets take this $32\%$ as Rootclaim's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps. In the case of a patron aiming to learn from sponsoring a forecasting tournament, the prior might represent the patron's initial probability.
+## A trusted authority determines a rough prior to reduce potential forecasting reward
+Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+1})^{2050-2021} \approx 32\%$. Lets take this $32\%$ as our Bayesian's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps. In the case of a patron aiming to learn from sponsoring a forecasting tournament, the prior might represent the patron's initial probability.
 
-## Forecasters attempt to move the prior
+## Forecasters attempt to move the trusted authority's prior
 
 **By arguing that the prior is wrong**
 
@@ -39,9 +39,9 @@ Forecasters might output an observation like the following:
 
 > China's current bellicosity is different from the historical norm. For instance, China has been [sending record number of planes over Taiwan's air defence zone](https://www.bbc.co.uk/news/world-asia-58794094). This should increase the probability of a successful resolution.
 
-## Rootclaim updates, and forecasters are rewarded
+## The trusted authority updates, and forecasters are rewarded
 
-After receiving the updates such as above, Rootclaim makes an approximately Bayesian update. For instance, maybe Rootclaim averages the two possible base rates, and moves from $32\%$ to $(32\% + 78\%)/2 = 55\%$. Then, it moves $5\%$ from $55\%$ to $60\%$ on account of the increased frequency of flights over Taiwanese airspace.
+After receiving the updates such as above, the trusted authority makes an approximately Bayesian update. For instance, maybe she averages the two possible base rates, and moves from $32\%$ to $(32\% + 78\%)/2 = 55\%$. Then, it moves $5\%$ from $55\%$ to $60\%$ on account of the increased frequency of flights over Taiwanese airspace.
 
 Now, one way forecasters could be rewarded would be in proportion to the percentage points of the update. However, this has the problem of rewarding an update from $1\%$ to $2\%$ the same as an update from $50\%$ to $51\%$, which seems undesirable. 
 
@@ -53,13 +53,13 @@ Continuing to our example, the original probability of $32\%$ corresponds to aro
 
 If we valued each bit of information about an invasion of Taiwan at $1000, the first forecaster would receive \$1,290, while the second would receive \$300.
 
-Note that under this method, if Rootclaim then moved back to $55\%$ because of a third argument brought in by a third person, that third person would receive $300, but rewards already given out would not be taken back. 
+Note that under this method, if the trusted authority then moved back to $55\%$ because of a third argument brought in by a third person, that third person would receive $300, but rewards already given out would not be taken back. 
 
 # Discussion of the method
 
 ## More on the central authority
 
-Above, we have been using Rootclaim as an example of a centralized authority capable of approximate Bayesian updates. When implementing this method, one might actually hire the real-life Rootclaim. Alternatively, one might consider more than one central authority, and aggregate forecaster rewards using some weighted average. In practice, one or a group of excellent forecasters might also serve as such a central authority capable of forecasting. In the case in which two groups of forecasters each act as the other's authority, we collapse to Karger et al.'s method. 
+When implementing this method, one might actually hire the real-life Rootclaim. Alternatively, one might consider more than one central authority, and aggregate forecaster rewards using some weighted average. In practice, one or a group of excellent forecasters might also serve as such a central authority capable of forecasting. In the case in which two groups of forecasters each act as the other's authority, we collapse to Karger et al.'s method. 
 
 Throughout, we have also been using the phrase "approximately Bayesian". But some updates, such as realizing that one's *prior* is wrong or incorrect, are only clumsily modelled as Bayesian. Alternatively, updates from "thinking more about it", or "making a calibration adjustment" do not neatly fit into the Bayesian paradigm either. Further, updates for surprising events which not predicted with any probability by (e.g., imagine making a Bayesian update on the advent of nuclear weapons as a Japanese who wasn't keeping up with the physics of the 20th century) cannot, strictly speaking, be Bayesian. Nevertheless, we might still update a more generalized set of updates, which includes the aforementioned but not other, arbitrary updates. On this topic, see [Radical Probabilism](https://www.lesswrong.com/posts/xJyY5QkQvNJpZLJRo/radical-probabilism-1) and [Reflective Bayesianism](https://www.lesswrong.com/posts/vpvLqinp4FoigqvKy/reflective-bayesianism)
 
@@ -69,17 +69,17 @@ Note that this amplification method might go very wrong if forecasting something
 
 ## More on the forecasters
 
-One potential problem which might arise from the system of incentives which we have just described might be that forecasters simply spam Rootclaim with a large number of claims and sources, and wait for Rootclaim to filter them. This could be fixed by requiring inputs to be well-formed and well-written, or that we might not accept inputs which move Rootclaim by too small an amount, i.e., by rejecting inputs which are too "lazy". One could also make forecasters pay a small price for suggesting inputs, or only give forecasters a chance to give a finite number of inputs, which would also incentivize well-formed and well-structured inputs.
+One potential problem which might arise from the system of incentives which we have just described might be that forecasters simply spam the trusted authority with a large number of claims and sources, and wait for the trusted authority to filter them. This could be fixed by requiring inputs to be well-formed and well-written, or that we might not accept inputs which move the trusted authority by too small an amount, i.e., by rejecting inputs which are too "lazy". One could also make forecasters pay a small price for suggesting inputs, or only give forecasters a chance to give a finite number of inputs, which would also incentivize well-formed and well-structured inputs.
 
-But there is another potential twist which might solve that problem, in addition to leading to further efficiency gains: Have forecasters also try to predict how much Rootclaim will be moved by every argument they bring\footnote{Note that this would require fixing the ordering of each new argument/piece of evidence}, and be rewarded for being accurate in that assessment in addition to being rewarded for bringing in new evidence.
+But there is another potential twist which might solve that problem, in addition to leading to further efficiency gains: Have forecasters also try to predict how much the trusted authority will be moved by every argument they bring\footnote{Note that this would require fixing the ordering of each new argument/piece of evidence}, and be rewarded for being accurate in that assessment in addition to being rewarded for bringing in new evidence.
 
 For instance, one forecaster might bring up the piece of evidence we mentioned above:
 
 > > China's current bellicosity is different from the historical norm. For instance, China has been [sending record number of planes over Taiwan's air defence zone](https://www.bbc.co.uk/news/world-asia-58794094). This should increase the probability of a successful resolution.
 
-And another forecaster might receive a small reward for accuracy in predicting how much Rootclaim would update after viewing that piece of evidence.
+And another forecaster might receive a small reward for accuracy in predicting how much the trusted authority would update after viewing that piece of evidence.
 
-At this point, we have a methodology for bringing in new pieces of evidence and judging how much to update on them by, but it requires Rootclaim to look at each of them. However, Rootclaim—our expensive but trustworthy Bayesian approximator—could look at only a fraction of them, say 10\%, chosen randomly, but increase the rewards for those predictions tenfold. Depending on the setup, this might preserve incentive compatibility but allow us to trade off Rootclaim's more expensive procedure for the less expensive procedure of using forecasters. For more on this method, see [Amplifying generalist research via forecasting](https://www.lesswrong.com/posts/cLtdcxu9E4noRSons/part-1-amplifying-generalist-research-via-forecasting) (and [part 2](https://www.lesswrong.com/posts/FeE9nR7RPZrLtsYzD/part-2-amplifying-generalist-research-via-forecasting)).
+At this point, we have a methodology for bringing in new pieces of evidence and judging how much to update on them by, but it requires the trusted authority to look at each of them. However, the trusted authority—our expensive but trustworthy Bayesian approximator—could look at only a fraction of them, say 10\%, chosen randomly, but increase the rewards for those predictions tenfold. Depending on the setup, this might preserve incentive compatibility but allow us to trade off the trusted authority's more expensive procedure for the less expensive procedure of using forecasters. For more on this method, see [Amplifying generalist research via forecasting](https://www.lesswrong.com/posts/cLtdcxu9E4noRSons/part-1-amplifying-generalist-research-via-forecasting) (and [part 2](https://www.lesswrong.com/posts/FeE9nR7RPZrLtsYzD/part-2-amplifying-generalist-research-via-forecasting)).
 
 ## Evidence base and comparison to Karger et al.'s method
 
@@ -99,4 +99,4 @@ Although both Karger et al.'s and our method output a legible output, in Karger'
 
 ## Conclusion
 
-In conclusion, the proposed method of amplifying an expensive but Bayesian approximator has the benefit of appearing more grounded, and not having the weird loops in Karger et al.'s reciprocal scoring proposal—or in other Keynesian beauty contest designs. Further, the existence of Rootclaim provides proof of existence of sch trusted Bayesians approximators. We look forward to someone implementing the method.
+In conclusion, the proposed method of amplifying an expensive but Bayesian approximator has the benefit of appearing more grounded, and not having the weird loops in Karger et al.'s reciprocal scoring proposal—or in other Keynesian beauty contest designs. We look forward to someone implementing the method.
