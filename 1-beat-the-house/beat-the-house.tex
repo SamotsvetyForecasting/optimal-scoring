@@ -301,6 +301,11 @@ points to forecasters in according to the market scoring rule specified
 above. As long as forecaster reward is eventually proportional to points
 acquired, this scoring rule becomes proper.
 
+A particularly parsimonious way of allowing broke forecasters to have
+skin in the game is to give them a fixed reward, and allow them to
+either receive it at question resolution time, or to bet it in the
+meantime.
+
 \hypertarget{description-of-the-method.}{%
 \section{Description of the method.}\label{description-of-the-method.}}
 
@@ -319,8 +324,8 @@ prior}\label{the-patron-determines-a-rough-prior}}
 Taiwan has been independent of mainland China since the 25th of October
 1945, i.e., 76 years into the past. Per Laplace's law, the chances that
 this will change by 2050 is
-\(1-(1-\frac{1}{(2021-1945)+1})^{2050-2021} \approx 32\%\). Lets take
-this \(32\%\) as the market's initial probability. Note that per the
+\(1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%\). Lets take
+this \(31\%\) as the market's initial probability. Note that per the
 \href{https://en.wikipedia.org/wiki/Reference_class_problem}{reference
 class problem}, other reference classes might have been chosen, so the
 point of this prior is not to be definitive, but rather to provide a
@@ -374,7 +379,7 @@ this.\footnote{This may stop holding if there is a more liquid outside market in
 When contemplating this scheme, two issues become apparent after some
 amount of reflection. First, in a prediction market in which the outcome
 becomes more and more apparent as time goes on, the question creator
-loses all the funds he put up as liquidity. Secondly, forecasters have
+loses all the funds they put up as liquidity. Secondly, forecasters have
 an incentive to predict as late as possible.
 
 Within the automatic market-maker abstraction, both of these issues have
@@ -386,6 +391,14 @@ liquidity there is in the markets as time goes on, so that forecasters
 have a small incentive to predict sooner rather than later. This is easy
 to do by making the parameter \(b=b(t)\), i.e., dependent on time, and
 slowly decreasing.
+
+However, this will remain an issue in cases where the market isn't tied
+to one particular decision; when the market is open for a long time,
+news may come in and the forecater will be able to make easy money
+compared to the prior by utilizing the new information. Therefore, it
+might be useful to allow the prior to be quickly updated when
+substantial news comes in before allowing the forecaster to further
+improve upon it. Though, this would create extra work for the patron.
 
 \hypertarget{the-question-gets-a-binary-resolution-and-forecasters-get-rewarded.}{%
 \subsection{The question gets a binary resolution and forecasters get
@@ -474,7 +487,10 @@ logarithmic market scoring rule, platforms may find others market
 scoring rules more suitable in practice. In addition, our method's cost
 increases roughly linearly with the number of forecasters, so platforms
 should figure out how to invite only the good ones, or a scheme to
-reward later forecasters less.
+reward later forecasters less. It may make sense to have some platforms
+that use less collaborative scoring rules in exchange for more
+particpants, then invite the best forecasters to invite-only platforms
+where it is feasible to use more collaborative roles.
 
 Note also that the three improvements are modular, and their combination
 fairly opinionated. But there is nothing preventing platforms from
