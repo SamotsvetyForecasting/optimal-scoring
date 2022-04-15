@@ -120,7 +120,7 @@ an ``amplified oracle'', which roughly looks as follows:
 
 Towards the middle of the paper, we also point out that the ``central
 authority'' doesn't have to be particularly privileged or more trusted
-than the rest; the core feature is rather that some forecasters predict
+than the rest. The core feature is rather that some forecasters predict
 other forecasters and the second group of forecasters predicts reality.
 
 This scheme has the advantage that forecasters can be rewarded speedily
@@ -140,16 +140,16 @@ operationalized by
 Alas, this method requires a cluster or questions, so the reader should
 picture a cluster of questions similar to that one.
 
-\hypertarget{the-oracle-determines-a-rough-prior-of-all-questios-in-order-to-reduce-potential-reward.}{%
-\subsection{The oracle determines a rough prior of all questios, in
+\hypertarget{the-oracle-determines-a-rough-prior-of-all-questions-in-order-to-reduce-potential-reward.}{%
+\subsection{The oracle determines a rough prior of all questions, in
 order to reduce potential
-reward.}\label{the-oracle-determines-a-rough-prior-of-all-questios-in-order-to-reduce-potential-reward.}}
+reward.}\label{the-oracle-determines-a-rough-prior-of-all-questions-in-order-to-reduce-potential-reward.}}
 
 Taiwan has been independent of mainland China since the 25th of October
 1945, i.e., 76 years into the past. Per Laplace's law, the chances that
 this will change by 2050 is
 \(1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%\). Lets take
-this \(32\%\) as 's initial probability. Note that per the
+this \(31\%\) as 's initial probability. Note that per the
 \href{https://en.wikipedia.org/wiki/Reference_class_problem}{reference
 class problem}, other reference classes might have been chosen, so the
 point of this prior is not to be definitive, but rather to provide a
@@ -164,8 +164,9 @@ forecast.}\label{forecasters-attempt-to-foresee-the-oracles-future-forecast.}}
 
 Forecasters spend some effort trying to come up with forecasts which
 beat the prior. If they are rewarded in proportion to how much they beat
-this prior, as outlined in \href{}{Paying for bits}, they have an
-incentive to collaborate.
+this prior, as outlined in
+\href{https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/1-beat-the-house/beat-the-house.pdf}{Beat
+the house}, they have an incentive to collaborate.
 
 \hypertarget{the-oracle-predicts-on-a-randomly-chosen-number-of-questions}{%
 \subsection{The oracle predicts on a randomly chosen number of
@@ -179,20 +180,21 @@ these questions.
 their probability moves from the prior to the oracle
 forecast.}\label{forecasters-are-rewarded-or-punished-according-to-how-much-their-probability-moves-from-the-prior-to-the-oracle-forecast.}}
 
-As outlined in \href{}{Paying for bits}\footnote{Though this proposal
-  can also be trivially adapted for use with other scoring rules.},
-forecasters end up with a positive balance, if they have moved the
-probability from the prior towards the oracle's forecast. But if they
-moved the probability in the opposite direction, they end up with a
-negative balance.
+As outlined in
+\href{https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/1-beat-the-house/beat-the-house.pdf}{Beat
+the house}\footnote{Though this proposal can also be trivially adapted
+  for use with other scoring rules.}, forecasters end up with a positive
+balance, if they have moved the probability from the prior towards the
+oracle's forecast. But if they moved the probability in the opposite
+direction, they end up with a negative
+balance\footnote{Or still with a positive balance if the fixed reward is high enough}.
 
 In this case, forecasters should be rewarded in proportion to the number
 of questions which resolve. For instance, if the oracle only looks at
-one in ten questions, reward or punishment is multiplied by 10.
-
-Within the prediction market conceptualization, the maximum price of a
-share would be \$10 rather than \$1. But since shares only have a 10\%
-chance of paying out, their price doesn't exceed \$1.
+one in ten questions, reward or punishment is multiplied by 10. Within a
+prediction market, the maximum price of a share would be \$10 rather
+than \$1. But since shares only have a 10\% chance of paying out, their
+price doesn't exceed \$1.
 
 \hypertarget{after-a-time-the-oracle-is-rewarded-or-punished}{%
 \subsection{After a time, the oracle is rewarded or
@@ -228,8 +230,8 @@ authority}\label{more-on-the-central-authority}}
 
 Implicitly, we have been presenting this central authority as more
 trustworthy, or more truth-seeking than the other forecasters which are
-used to amplify it. But this might not necessarily be the case at all:
-this method might be used as a cost-saving device instead. For instance,
+used to amplify it. But this might not necessarily be the case at all.
+This method might instead be used as a cost-saving device. For instance,
 maybe some forecasters are more willing to receive rewards later rather
 than immediately, but both sets of forecasters produce similar quality
 forecasts. Alternatively, perhaps all forecasters have similar discount
@@ -249,23 +251,30 @@ the first group of short-termists might sneakily predict that the second
 group will think that there will be no inflation, but the link between
 the forecasting system and reality would have been weakened.
 
+We might also want to allow the central authority to see the outputs
+produced by the forecasters. This allows a forecaster with unique
+knowledge or exceptional research abilities to predict using all their
+knowledge, while ensuring that they are not punished for doing so by the
+relative ignorance of the central authority.
+
 \hypertarget{evidence-base-and-comparison-to-karger-et-al.s-method}{%
 \subsection{Evidence base and comparison to Karger et al.'s
 method}\label{evidence-base-and-comparison-to-karger-et-al.s-method}}
 
 Most of the reasons why I think why this method might be superior come
 from first principles reasoning or from my experience with forecasting.
-With regards to first-principle reasoning, both steps of the system are
+With regard to first-principle reasoning, both steps of the system are
 incentive compatible, and rational actors would thus be incentivized to
 predict reality.
 
-With regards to evidence from my experience as a forecaster, it just
+With regard to evidence from my experience as a forecaster, this method
 feels more grounded. A first group of forecasters try to predict or
 amplify a more patient group of forecasters, and the second group tries
 to predict reality. If a forecaster has unique information, they can and
 should try to convince the second group. If the evidence is just very
 private or hard to communicate, the forecaster with that information
-could offer a bet to the Bayesian approximator. Forecasters are
+could offer a bet to the central authority, and that willingness to bet
+is itself evidence that the central authority can use. Forecasters are
 incentivized to conduct expensive searches (e.g., interviews with
 citizens of far-away lands),
 cf.~\href{https://twitter.com/LinchZhang/status/1455759586158268417}{Linch
