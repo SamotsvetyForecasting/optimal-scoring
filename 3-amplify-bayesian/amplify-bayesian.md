@@ -24,7 +24,7 @@ In the interest of brevity, we shall outline our method by means of an example, 
 
 ## A trusted authority determines a rough prior to reduce potential forecasting reward
 
-Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%$. Lets take this $31\%$ as our Bayesian's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps. In the case of a patron aiming to learn from sponsoring a forecasting tournament, the prior might represent the patron's initial probability.
+Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+1})^{2050-2021} \approx 32\%$. Lets take this $32\%$ as our Bayesian's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps. In the case of a patron aiming to learn from sponsoring a forecasting tournament, the prior might represent the patron's initial probability.
 
 ## Forecasters attempt to move the trusted authority's prior
 
@@ -32,25 +32,25 @@ Note that forecasters may also work in teams to submit arguments.
 
 **By arguing that the prior is wrong**
 
+Keen readers might have noticed that the Laplace prior was wrongly computed. It should have been $1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%$. Forecasters could point this out and thus shift the central authority's probability.
+
 Forecasters might output an argument like the following:
 
-> The $32\%$ prior is computed with respect to Taiwan, but we have more information than that by looking at how China has asserted control over other outer territoritories or autonomous regions. Among these one might count Hong Kong, Macau and Tibet (and perhaps the Xinjiang Uygur Autonomous Region). Although the process of asserting control is more continuous in time, if we assume for simplification purposes that it happens in any one year, this moves our Laplace prior that another external territory will be brought under control at $1-(1-\frac{4}{(2021-1945)+1})^{2050-2021} \approx 78\%$. Because Taiwan is the only such territory left, this should be our probability for the question.
+> The $31\%$ prior is computed with respect to Taiwan, but we have more information than that by looking at how China has asserted control over other outer territoritories or autonomous regions. Among these one might count Hong Kong, Macau and Tibet (and perhaps the Xinjiang Uygur Autonomous Region). Although the process of asserting control is more continuous in time, if we assume for simplification purposes that it happens in any one year, this moves our Laplace prior that another external territory will be brought under control at $1-(1-\frac{4}{(2021-1945)+1})^{2050-2021} \approx 78\%$. Because Taiwan is the only such territory left, this should be our probability for the question.
 
 **By providing evidence about current affairs**
 
 Forecasters might output an observation like the following:
 
-> China's current bellicosity is different from the historical norm. For instance, China has been [sending record number of planes over Taiwan's air defence zone](https://www.bbc.co.uk/news/world-asia-58794094). This should increase the probability of a successful resolution.
+> China's current bellicosity is different from the historical norm. For instance, China has been [sending record number of planes over Taiwan's air defence zone](https://www.bbc.co.uk/news/world-asia-58794094). This should increase our probability of invasion.
 
 ## The trusted authority updates, and forecasters are rewarded
 
-After receiving the updates such as above, the trusted authority makes an approximately Bayesian update. For instance, maybe she averages the two possible base rates, and moves from $32\%$ to $(32\% + 78\%)/2 = 55\%$. Then, it moves $5\%$ from $55\%$ to $60\%$ on account of the increased frequency of flights over Taiwanese airspace.
+After receiving the updates such as above, the trusted authority makes an approximately Bayesian update. For instance, maybe she averages the two possible base rates, and moves from $31\%$ to $(31\% + 78\%)/2 ~ 55\%$. Then, it moves $5\%$ from $55\%$ to $60\%$ on account of the increased frequency of flights over Taiwanese airspace.
 
 Now, one way forecasters could be rewarded would be in proportion to the percentage points of the update. However, this has the problem of rewarding an update from $1\%$ to $2\%$ the same as an update from $50\%$ to $51\%$, which seems undesirable.
 
-One parsimonious way to solve this is by denominating updates in terms of bits—which are the natural unit for strength of conviction, though we will not justify this here because acquiring intuitions for why this is the case can prove to be difficult.
-
-For intuition, an update from $2^{n}:1$ odds to $2^{m}:1$ odds is an update of $(m-n)$ bits, whose size is of $|m-n|$ bits, where $|\cdot|$ represents out the absolute value. So for example, an update from $2^1:1$ odds $\left(\frac{2^1}{2^1 + 1} = 66\%\right)$ to $2^3:1$ $\left(\frac{2^3}{2^3 + 1} = 88\%\right)$ odds corresponds to an update from 1 bit to 3 bits, i.e., an update size of 2 bits. Conversely, an update from $1:2$ $\left(1:2 \text{ is equivalent to } 2^{-1}:1, \text{ so } \frac{2^{-1}}{2^{-1} + 1} = 33\%\right)$ to $2^{2}:1$ $\left(\frac{2^2}{2^2 + 1} = 80\%\right)$ corresponds to an update from -1 bit to 2 bits, i.e. an update of 3 bits.
+One parsimonious way to solve this is by denominating updates in terms of bits—which are the natural unit for strength of conviction, though we will not justify this here because acquiring intuitions for why this is the case can prove to be difficult. For intuition, an update from $2^{n}:1$ odds to $2^{m}:1$ odds is an update of $(m-n)$ bits, whose size is of $|m-n|$ bits, where $|\cdot|$ represents out the absolute value. So for example, an update from $2^1:1$ odds $\left(\frac{2^1}{2^1 + 1} = 66\%\right)$ to $2^3:1$ $\left(\frac{2^3}{2^3 + 1} = 88\%\right)$ odds corresponds to an update from 1 bit to 3 bits, i.e., an update size of 2 bits. Conversely, an update from $1:2$ $\left(1:2 \text{ is equivalent to } 2^{-1}:1, \text{ so } \frac{2^{-1}}{2^{-1} + 1} = 33\%\right)$ to $2^{2}:1$ $\left(\frac{2^2}{2^2 + 1} = 80\%\right)$ corresponds to an update from -1 bit to 2 bits, i.e. an update of 3 bits.
 
 Continuing to our example, the original probability of $32\%$ corresponds to around $1:2^1$ odds, or $2^{-1}:1$ odds, or strength of conviction of around -1 bit. The posterior probability of $55\%$ corresponds to around $1.22 : 1$ odds, or around $2^{0.3} : 1$ odds, or +0.3 bits. The difference between these is (0.3-(-1)) = 1.3 bits. An update from $55\%$ to $60\%$ would likewise be an update from $2^{0.3}:1$ to $2^{0.6}:1$, or 0.3 bits.
 
@@ -72,11 +72,11 @@ Note that this amplification method might go very wrong if forecasting something
 
 ## Incentive issues for forecasters
 
-One more problem which might arise from the system of incentives which we have just described might be that forecasters simply spam the trusted authority with a large number of claims and sources, and wait for the trusted authority to filter them. This could be fixed by requiring inputs to be well-formed and well-written, or that we might not accept inputs which move the trusted authority by too small an amount, i.e., by rejecting inputs which are too "lazy". One could also make forecasters pay a small price for suggesting inputs, or only give forecasters a chance to give a finite number of inputs, which would also incentivize well-formed and well-structured inputs.
+Forecasters simply spam the trusted authority with a large number of claims and sources, and wait for the trusted authority to filter them. This could be fixed by requiring inputs to be well-formed and well-written, or by not accepting inputs which move the trusted authority by too small an amount, i.e., by rejecting inputs which are too "lazy". One could also make forecasters pay a small price for suggesting inputs, or only give forecasters a chance to give a finite number of inputs, which would also incentivize well-formed and well-structured inputs.
 
-Another problem that might arise is that forecasters will be incentivized to exaggerate the weight of the evidence they are presenting, to get more reward from the central authority.
+Forecasters might also be incentivized to exaggerate the weight of the evidence they are presenting, to get more reward from the central authority.
 
-But there is another potential twist which might alleviate both of these problems, in addition to leading to further efficiency gains: Have forecasters also try to predict how much the trusted authority will be moved by every argument they bring\footnote{Note that this would require fixing the ordering of each new argument/piece of evidence}, and be rewarded for being accurate in that assessment in addition to being rewarded for bringing in new evidence. This may also incentivize forecasters to bring up any counter-evidence to exaggreated claims, and forecasters who consistently overexaggerate their claims could be penalized.
+There is, however, a twist which might alleviate both of these problems, in addition to leading to further efficiency gains: Have forecasters also try to predict how much the trusted authority will be moved by every argument they bring\footnote{Note that this would require fixing the ordering of each new argument/piece of evidence}, and be rewarded for being accurate in that assessment in addition to being rewarded for bringing in new evidence. This may also incentivize forecasters to bring up any counter-evidence to exaggreated claims, and forecasters who consistently overexaggerate their claims could be penalized.
 
 For instance, one forecaster might bring up the piece of evidence we mentioned above:
 
