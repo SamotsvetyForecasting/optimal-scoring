@@ -349,15 +349,17 @@ forecasts for the question may not be as valuable.
 \subsection{Forecasters predict on the
 question}\label{forecasters-predict-on-the-question}}
 
-Forecasters each get access to a prediction market governed by a
-logarithmic market scoring rule, and whose initial probability is the
-prior determined in the previous step. This prediction market is also
-characterized by a further parameter: liquidity. Liquidity is the amount
-of money which is available to take bets on both sides. The more
-liquidity there is, the more money it takes to moves a market's odds,
-and the more money that can be made if those odds are wrong. For this
-reason, question creators would put more liquidity in markets they care
-more about. Above, liquidity corresponds to the parameter \(b\).
+Forecasters
+each\footnote{Note that although we are speaking about individual forecasters, this scheme could also be applied to teams of forecasters. That is, we could give access to one prediction market to each team, and allow team members to distribute winnings or losses as they see fit.}
+get access to a prediction market governed by a logarithmic market
+scoring rule, and whose initial probability is the prior determined in
+the previous step. This prediction market is also characterized by a
+further parameter: liquidity. Liquidity is the amount of money which is
+available to take bets on both sides. The more liquidity there is, the
+more money it takes to moves a market's odds, and the more money that
+can be made if those odds are wrong. For this reason, question creators
+would put more liquidity in markets they care more about. Above,
+liquidity corresponds to the parameter \(b\).
 
 If an individual forecaster thinks that the initial probability is
 wrong, he can move it to a probability which he thinks is more correct
