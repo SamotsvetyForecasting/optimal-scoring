@@ -82,13 +82,15 @@ There is still a residual incentive to compete with other forecasters to produce
 
 For a treatment of why this is beneficial, see [Nassim Taleb](https://twitter.com/nntaleb)'s Incerto. But note that this step is optional. That is, forecasting platforms could reward points to forecasters in according to the market scoring rule specified above. As long as forecaster reward is eventually proportional to points acquired, this scoring rule becomes proper.
 
+A particularly parsimonious way of allowing broke forecasters to have skin in the game is to give them a fixed reward, and allow them to either receive it at question resolution time, or to bet it in the meantime.
+
 # Description of the method.
 
 In the interest of brevity, we shall outline our proposed method by means of an example, and the example shall be the question "Will the People's Republic of China have annexed at least half of Taiwan by 2050?", as operationalized by [Metaculus](https://www.metaculus.com/questions/5320/chinese-annexation-of-most-of-taiwan-by-2050/). Parts which justify or explain the use of other parts are explained first, even if they would come later in terms of time.
 
 ## The patron determines a rough prior
 
-Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+1})^{2050-2021} \approx 32\%$. Lets take this $32\%$ as the market's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps.
+Taiwan has been independent of mainland China since the 25th of October 1945, i.e., 76 years into the past. Per Laplace's law, the chances that this will change by 2050 is $1-(1-\frac{1}{(2021-1945)+2})^{2050-2021} \approx 31\%$. Lets take this $31\%$ as the market's initial probability. Note that per the [reference class problem](https://en.wikipedia.org/wiki/Reference_class_problem), other reference classes might have been chosen, so the point of this prior is not to be definitive, but rather to provide a starting point less arbitrary than 50\% from which forecaster reward might be computed in the next steps.
 
 By sharing this initial step, the question creator saves the time of the many forecasters which may participate in the question.
 

@@ -6,10 +6,10 @@ This git repository outlines three scoring rules that I believe might serve curr
 
 I am choosing to publish them in git and in the [arxiv](https://www.arxiv.com/) because journals tend to be extractive and time consuming, and because I am in a position to not care about them. In any case, the three scoring rules are:
 
-- [*Beat the house*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/1-beat-the-house/beat-the-house.pdf) outlines three small tweaks to the logarithmic scoring rule that makes it collaborative and suitable for distributing a fixed amount of reward. 
-- [*Amplified Oracle*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/2-amplified-oracle/amplified-oracle.pdf) provides what I believe to be a more elegant alternative to [Karger et al.'s reciprocal scoring](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498)
-- [*Amplify a Bayesian*](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/3-amplify-bayesian/amplify-bayesian.pdf) provides a more speculative alternative to Karger et al.'s reciprocal scoring rule.
+- [_Beat the house_](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/1-beat-the-house/beat-the-house.pdf) outlines three small tweaks to the logarithmic scoring rule that makes it collaborative and suitable for distributing a fixed amount of reward.
+- [_Amplified Oracle_](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/2-amplified-oracle/amplified-oracle.pdf) provides what I believe to be a more elegant alternative to [Karger et al.'s reciprocal scoring](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3954498)
+- [_Amplify a Bayesian_](https://github.com/SamotsvetyForecasting/optimal-scoring/blob/master/3-amplify-bayesian/amplify-bayesian.pdf) provides a more speculative alternative to Karger et al.'s reciprocal scoring rule.
 
-Although *Amplify Samotsvety* builds upon *Beat the house* to ensure collaborativeness, I would recommend reading *Amplify Samotsvety* first, and then come back to *Beat the house* if needed.
+Although _Amplify Samotsvety_ builds upon _Beat the house_ to ensure collaborativeness, I would recommend reading _Amplify Samotsvety_ first, and then coming back to _Beat the house_ if needed.
 
-Issues (complaints or ideas) or pull requests (tweaks and improvements to our work) are both welcome.
+Issues (complaints or ideas) or pull requests (tweaks and improvements to our work) are both welcome. I would also like to thank Eli Lifland, Gavin Leech and Misha Yagudin for comments and suggestions, as well as Ezra Karger for fruitful discussion.
