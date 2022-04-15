@@ -121,9 +121,10 @@ Bayesian}, we use the continuous form of this scoring rule like a
 lego-block: we combine it with other methods to build more powerful and
 general incentive schemes.
 
-\hypertarget{a-few-limitations-of-previous-approaches-and-their-solutions}{%
-\section{A few limitations of previous approaches, and their
-solutions}\label{a-few-limitations-of-previous-approaches-and-their-solutions}}
+\hypertarget{some-rough-notes-on-limitations-of-previous-approaches-and-their-solutions}{%
+\section{Some rough notes on limitations of previous approaches, and
+their
+solutions}\label{some-rough-notes-on-limitations-of-previous-approaches-and-their-solutions}}
 
 \hypertarget{market-scoring-rules-overcome-the-limitations-of-brier-and-logarithmic-scoring-rules}{%
 \subsection{Market scoring rules overcome the limitations of Brier and
@@ -131,7 +132,7 @@ logarithmic scoring
 rules}\label{market-scoring-rules-overcome-the-limitations-of-brier-and-logarithmic-scoring-rules}}
 
 The Brier score has limitations stemming from its deep theoretical
-inelegance. Sure, it is proper, but it also doesn't have desirable
+inelegance. It is indeed proper, but it also doesn't have desirable
 properties such as:
 
 \begin{itemize}
@@ -154,6 +155,7 @@ In contrast, the logarithmic scoring rule has an array of desirable
 properties.
 
 \begin{itemize}
+\tightlist
 \item
   Composability: The logarithmic score on ``A\&B'' is the sum of the log
   scores on ``A'' and ``B given A''
@@ -165,28 +167,28 @@ properties.
   score of the geometric mean of the guesses. If forecasters are
   rewarded in proportion to their log score vs the crowd, there is no
   advantage to forecasting the current crowd.
-
-  More general, for many nice theoretical properties, the log score will
-  have them, whereas the Brier score will not. And yet, the Brier score
-  offers bounded payoffs, whereas the logarithmic score does not. That
-  is, when distributing a fixed pot of money as rewards to forecasters,
-  the natural way to do this would be in proportion to their scores. But
-  in the case of the logarithmic scoring rule, it is not bounded, which
-  would complicate payoff calculations.\footnote{Readers may think that
-    normalization by the worst logarithmic score may solve this. But
-    because the worst score can be arbitrarily low, preserving incentive
-    compatibility is not trivial.}
 \end{itemize}
+
+More generally, for many nice theoretical properties, the log score will
+have them, whereas the Brier score will not. And yet, the Brier score
+offers bounded payoffs, whereas the logarithmic score does not. That is,
+when distributing a fixed pot of money as rewards to forecasters, the
+natural way to do this would be in proportion to their scores. But the
+logarithmic scoring rule is not bounded, which complicates payoff
+calculations.\footnote{Readers may think that normalization by the worst
+  logarithmic score may solve this. But because the worst score can be
+  arbitrarily low, preserving incentive compatibility is not trivial.}
 
 This is why platforms such as Cultivate Labs still use the Brier score
 to reward their members. In contrast, platforms such as Metaculus solve
 this problem by forbidding their members from inputting probabilities
 lower than 1\% or higher than 99\%.
 
-However, a logarithmic market scoring rule can approximate the
-logarithmic score, while bounding payoffs by only allowing players to
-loose as much as they have previously accumulated. Conversely, the more
-money---or points in the case of a play-money prediction market---a
+However, a logarithmic market scoring rule can
+approximate\footnote{In theory, it could be equivalent. In practice, this is less clear, because forecasters could, for instance, have an unboundedly low score on a forecasting platform such as Metaculus, but not be able to loose an unbounded amount of funds}
+the logarithmic score, while bounding payoffs by only allowing players
+to loose as much as they have previously accumulated. Conversely, the
+more money---or points in the case of a play-money prediction market---a
 participant has accumulated, the more extreme they are allowed to make
 the market. This preserves some of the desirable properties of the
 logarithmic scoring rule in approximate form, while making payoffs
@@ -310,10 +312,9 @@ People's Republic of China have annexed at least half of Taiwan by
 Parts which justify or explain the use of other parts are explained
 first, even if they would come later in terms of time.
 
-\hypertarget{the-patron-determines-a-rough-prior-to-reduce-potential-forecasting-reward.}{%
-\subsection{The patron determines a rough prior to reduce potential
-forecasting
-reward.}\label{the-patron-determines-a-rough-prior-to-reduce-potential-forecasting-reward.}}
+\hypertarget{the-patron-determines-a-rough-prior}{%
+\subsection{The patron determines a rough
+prior}\label{the-patron-determines-a-rough-prior}}
 
 Taiwan has been independent of mainland China since the 25th of October
 1945, i.e., 76 years into the past. Per Laplace's law, the chances that
@@ -333,14 +334,16 @@ In the case of a patron aiming to learn from sponsoring a forecasting
 tournament, the prior might represent the patron's initial probability.
 If the patron is unsophisticated and the question is not amenable to
 base-rate analysis, we may use a 50\%, the percent of questions which
-resolve positively on the site, or some other such point. Alternatively,
-the patron may sub-contract the creation of the prior, for instance by
-paying other forecasters to quickly do so or by creating low-liquidity
-(and thus low-potential reward) prediction markets.
+resolve positively on the forecasting site which hosts a given question,
+or some other such abstract reference class. Alternatively, the patron
+may sub-contract the creation of the prior, for instance by paying other
+forecasters to quickly do so or by creating low-liquidity (and thus
+low-potential reward) prediction markets.
 
 If there is no stakeholder or proxy-stakeholder willing and able to
 provide a prior, this also provides a useful signal to forecasters that
-there might be no stakeholders interested in the question.
+there might be no stakeholders interested in the question, and thus that
+forecasts for the question may not be as valuable.
 
 \hypertarget{forecasters-predict-on-the-question}{%
 \subsection{Forecasters predict on the
@@ -362,8 +365,9 @@ by betting some of his funds. Further, we might hope that the different
 forecasters might each research different aspects of the question and
 then reveal their information to each other, so that they can
 collectively correct their own markets more efficiently. Because each
-interacts with his own market. We explore whether this assumption might
-break down in Appendix A.
+forecaster interacts only with his own market, we may hope that
+forecasters are in fact incentivized to do
+this.\footnote{This may stop holding if there is a more liquid outside market in which all forecasters can participate. In that case, the situation is more complex to analyze.}
 
 When contemplating this scheme, two issues become apparent after some
 amount of reflection. First, in a prediction market in which the outcome
@@ -372,8 +376,8 @@ loses all the funds he put up as liquidity. Secondly, forecasters have
 an incentive to predict as late as possible.
 
 Within the automatic market-maker abstraction, both of these issues have
-a clear solution. First, stop trading before the outcome is known. One
-particularly advisable point would be to cut trading when the
+a clear solution. First, close the market before the outcome is known.
+One particularly advisable point would be to cut trading when the
 stakeholder interested in the question makes the decision that the
 market was created to influence. Secondly, slowly reduce the amount of
 liquidity there is in the markets as time goes on, so that forecasters
@@ -456,7 +460,8 @@ implemented in forecasting platforms:
   each forecaster, rather than a scoring rule, because this better
   governs how extreme the probabilities which forecasters input can be.
 \item
-  Make forecasters risk their own funds.
+  Make forecasters risk their own funds, optionally sponsoring them
+  once.
 \end{itemize}
 
 These improvements solve the majority of the problems identified in
@@ -465,8 +470,9 @@ Problems With Current Forecasting Platforms}. Still, the hard work of
 implementation is yet to be done. For instance, although we favor the
 logarithmic market scoring rule, platforms may find others market
 scoring rules more suitable in practice. In addition, our method's cost
-increases linearly with the number of forecasters, so platforms should
-figure out how to invite only the good ones.
+increases roughly linearly with the number of forecasters, so platforms
+should figure out how to invite only the good ones, or a scheme to
+reward later forecasters less.
 
 Note also that the three improvements are modular, and their combination
 fairly opinionated. But there is nothing preventing platforms from
