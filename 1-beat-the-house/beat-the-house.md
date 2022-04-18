@@ -17,7 +17,7 @@ In particular, the practical innovations we suggest are:
 
 - Instead of comparing forecasters against other forecasters, compare them against against the initial probability of the stakeholder who sponsors the question
 - Create a prediction market for each forecaster with a logarithmic market scoring rule, and allow each forecaster to move only the probability of their own prediction market.
-- Require forecasters to put their money where their mouth is by betting their own money, so that if their forecast is worse that the houses' own forecast, they loose money. Optionally, sponsor forecasters once who start out without many fund themselves.
+- Require forecasters to put their money where their mouth is by betting their own money, so that if their forecast is worse that the houses' own forecast, they lose money. Optionally, sponsor forecasters once who start out without many fund themselves.
 
 In two accompanying papers, _Amplified Oracle_ and _Amplify a Bayesian_, we use the continuous form of this scoring rule like a lego-block: we combine it with other methods to build more powerful and general incentive schemes.
 
@@ -41,7 +41,7 @@ More generally, for many nice theoretical properties, the log score will have th
 
 This is why platforms such as Cultivate Labs still use the Brier score to reward their members. In contrast, platforms such as Metaculus solve this problem by forbidding their members from inputting probabilities lower than 1% or higher than 99%.
 
-However, a logarithmic market scoring rule can approximate\footnote{In theory, it could be equivalent. In practice, this is less clear, because forecasters could, for instance, have an unboundedly low score on a forecasting platform such as Metaculus, but not be able to loose an unbounded amount of funds} the logarithmic score, while bounding payoffs by only allowing players to loose as much as they have previously accumulated. Conversely, the more money—or points in the case of a play-money prediction market—a participant has accumulated, the more extreme they are allowed to make the market. This preserves some of the desirable properties of the logarithmic scoring rule in approximate form, while making payoffs bounded without having to institute a sharp cut-off.
+However, a logarithmic market scoring rule can approximate\footnote{In theory, it could be equivalent. In practice, this is less clear, because forecasters could, for instance, have an unboundedly low score on a forecasting platform such as Metaculus, but not be able to lose an unbounded amount of funds} the logarithmic score, while bounding payoffs by only allowing players to lose as much as they have previously accumulated. Conversely, the more money—or points in the case of a play-money prediction market—a participant has accumulated, the more extreme they are allowed to make the market. This preserves some of the desirable properties of the logarithmic scoring rule in approximate form, while making payoffs bounded without having to institute a sharp cut-off.
 
 From a theoretical perspective and pointers to previous literature, Hanson's [Logarithmic Market Scoring Rules for Modular Combinatorial Information Aggregation](https://mason.gmu.edu/~rhanson/mktscore.pdf) is a dry if comprehensive introduction. From the perspective of a programmer seeking to implement a logarithmic market scoring rule, Gnosis' [LMSR Primer](https://gnosis-pm-js.readthedocs.io/en/v1.3.0/lmsr-primer.html) is particularly readable.
 
@@ -59,7 +59,7 @@ Then the marginal price is given by
 
 $$p_i = \frac{\partial C}{\partial q_i} = \frac{exp\left(\frac{q_i + a_i}{b}\right)}{\sum_j{exp\left(\frac{q_j + a_j}{b}\right)}}$$
 
-Note that from a platform design perspective, $\vec{a}$ can be abstracted away by setting $\vec{q}=\vec{a}$, i.e., by initializing a market maker with a number of shares already issued. Note also that players cannot loose more than the account in their balance, or, conversely, that the more they are willing to risk, the more extreme their probabilities can be. This seems more elegant than discrete cutoffs at $<1\%$ or $>99\%$, as in Metaculus.
+Note that from a platform design perspective, $\vec{a}$ can be abstracted away by setting $\vec{q}=\vec{a}$, i.e., by initializing a market maker with a number of shares already issued. Note also that players cannot lose more than the account in their balance, or, conversely, that the more they are willing to risk, the more extreme their probabilities can be. This seems more elegant than discrete cutoffs at $<1\%$ or $>99\%$, as in Metaculus.
 
 [^calculations]: Readers may think that normalization by the worst logarithmic score may solve this. But because the worst score can be arbitrarily low, preserving incentive compatibility is not trivial.
 
